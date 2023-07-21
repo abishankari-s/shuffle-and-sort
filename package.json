@@ -1,0 +1,24 @@
+{
+  "name": "shuffle_and_sort",
+  "version": "1.0.0",
+  "description": "Shffle and Sort project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Abi shankari",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-typescript": "^7.22.5",
+    "@types/jest": "^29.5.3",
+    "@types/jquery": "^3.5.16",
+    "babel-jest": "^29.6.1",
+    "jest": "^29.6.1",
+    "jsdom": "^22.1.0",
+    "saas": "^1.0.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  }
+}

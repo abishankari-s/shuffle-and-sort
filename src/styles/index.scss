@@ -1,0 +1,154 @@
+$mobile-size: 375px;
+$desktop-size: 960px;
+$color1: #2b8ead;
+$color2: #6f98a8; 
+$color3: #bfbfbf; 
+$color4: #2f454e;
+$border:#000000;
+$header:#333333;
+$mobile-background:#ffffff;
+$background:#efefef;
+$button-color:#72c3dc;
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+  
+  @mixin mobile{
+  @media (min-width: $mobile-size) and (max-width:$desktop-size) {
+    background-color: $header;
+    @content;
+  }
+}
+  @mixin desktop{
+  @media (min-width: $desktop-size) {
+    @content;
+  }
+}
+  
+
+@mixin common-css{
+    display: flex;
+    flex-wrap: wrap;
+    button{
+        width: 200px;
+        height: 50px;
+        background-color: $button-color;
+        border-radius: 12px;
+        box-shadow: 0px 5px 0px 0 $color1;
+        color: $mobile-background;
+        border: 0px;
+        position: relative;
+        margin: 20px;
+      }
+    .button-container{
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+  }
+  footer{
+    width: 100%; 
+     margin-top: 20px;
+  }
+    
+}
+@mixin grid-cell($color) {
+    background-color: $color;
+  }
+
+@mixin border-cell($color){
+    box-shadow: -10px 0px $color;
+}
+.header{
+    @include mobile(){
+        color: $mobile-background;
+    }
+}
+.container{
+    @include common-css();
+    @include desktop(){
+    background-color: $background;
+ .button-container{
+  flex-direction: column;
+  margin-left: 20px;
+  }
+  
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+.grid-cell {
+  height: 200px;
+  width: 200px;
+  color: $mobile-background;
+  font-size: 100px;
+}
+
+.color1 {
+    @include grid-cell($color1);
+  }
+  
+  .color2 {
+    @include grid-cell($color2);
+  }
+  
+  .color3 {
+    @include grid-cell($color3);
+  }
+  
+  .color4 {
+      @include grid-cell($color4);
+  }
+}
+@include mobile(){
+    background-color: $mobile-background;
+    button{
+    width: 150px;
+    height: 50px;
+    }
+ .button-container{
+    order: -1;
+    flex-direction: row;
+    margin-left: 20px;
+  }
+
+.grid-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.grid-cell {
+  width: 100%;
+  color: $border;
+  background-color: $background;
+  font-size: 35px;
+  margin-top: 10px;
+}
+
+.color1 {
+    @include border-cell($color1);
+  }
+  
+  .color2 {
+    @include border-cell($color2);
+  }
+  
+  .color3 {
+    @include border-cell($color3);
+  }
+  
+  .color4 {
+      @include border-cell($color4);
+  }
+}
+}
+
+
+
