@@ -1,4 +1,4 @@
-export function shuffleGridCells(): void {
+function shuffleGridCells(): void {
     const gridCells = document.querySelectorAll('.grid-cell');
     const gridContainer = document.querySelector('.grid-container') as HTMLElement;
     const cellsArray = Array.from(gridCells);
@@ -6,7 +6,7 @@ export function shuffleGridCells(): void {
     cellsArray.forEach(cell => gridContainer.appendChild(cell));
   }
   
-export function sortGridCells(): void {
+function sortGridCells(): void {
     const gridContainer = document.querySelector('.grid-container') as HTMLElement;
     const gridCells = Array.from(gridContainer.children) as HTMLElement[];
     gridCells.sort((a, b) => {
